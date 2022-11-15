@@ -1,0 +1,8 @@
+<form>
+  <div class="mb-12">
+    <input type="text" class="form-control" id="newTask" placeholder="New Task to add"
+    name="taskToAdd"
+    (keyup.enter)="onTaskAdd($event)"
+    [(ngModel)]="addTaskValue"/>
+  </div>
+</form>

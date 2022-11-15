@@ -1,0 +1,21 @@
+<ul class="list-group">
+  <li *ngFor="let task of tasks" class="list-group-item">
+    <div class="form-check">
+      <div class="container text-left">
+        <div class="row">
+          <div class="col-md-1 ms-0 ps-0  me-0 pe-0">
+            <input type="checkbox" class="form-check-input" (change)="onTaskChange($event,task)"
+                   [checked]="task.completed">
+          </div>
+          <div class="col-md-8 ms-0 ps-0">
+            <span ngClass="{{task.completed ? 'name completed': 'name' }}">{{task.name}}</span>
+          </div>
+          <div class="col-md-2 me-1">
+            <span class="label {{ getDueDateLabel(task) }} pull-right">{{ task.dueDate }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>
+
